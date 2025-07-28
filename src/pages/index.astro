@@ -1,11 +1,15 @@
 ---
 import Badge from "../components/Badge.astro";
-import Welcome from "../components/Welcome.astro";
+import SocialPill from "../components/SocialPill.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import MailIcon from "../icons/Mail.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 ---
 
-<Layout>
+<Layout title="Sebastian Landeo - Portafolio - Ingeniero de Software, Análisis de Datos e IA"
+description="Portafolio personal de Sebastian Landeo, ingeniero de software especializado en análisis de datos e inteligencia artificial. Explora mis proyectos y habilidades.">
   <main>
     <section class="w-full mx-auto lg:w-[740px] py-44">
       <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
@@ -24,7 +28,22 @@ import "../styles/global.css";
         en la Universidad Nacional Mayor de San Marcos (UNMSM), especializado en las
         áreas de <span class="text-yellow-200/90">Análisis de Datos e IA</span> para la toma de decisiones.
       </h2>
-      <ul></ul>
+
+      <!-- class="w-6 h-6" = class="size-6"-->
+      <nav class="flex gap-x-2 mt-8">
+        <SocialPill href="https://www.linkedin.com/in/sebastian-landeo-cuentas">
+          <LinkedInIcon class="w-6 h-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/Sebastian-Landeo">
+          <GitHubIcon class="w-6 h-6" />
+          GitHub
+        </SocialPill>
+        <SocialPill href="https://github.com/Sebastian-Landeo">
+          <MailIcon class="w-6 h-6" />
+          sebastian.landeo@unmsm.edu.pe
+        </SocialPill>
+      </nav>
     </section>
   </main>
 </Layout>
