@@ -6,12 +6,17 @@ import GitHubIcon from "../icons/GitHub.astro";
 import MailIcon from "../icons/Mail.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Briefcase from "../icons/Briefcase.astro";
 ---
 
-<Layout title="Sebastian Landeo - Portafolio - Ingeniero de Software, Análisis de Datos e IA"
-description="Portafolio personal de Sebastian Landeo, ingeniero de software especializado en análisis de datos e inteligencia artificial. Explora mis proyectos y habilidades.">
+<Layout
+  title="Sebastian Landeo - Portafolio - Ingeniero de Software, Análisis de Datos e IA"
+  description="Portafolio personal de Sebastian Landeo, ingeniero de software especializado en análisis de datos e inteligencia artificial. Explora mis proyectos y habilidades."
+>
   <main>
-    <section class="w-full mx-auto lg:w-[740px] py-44">
+    <SectionContainer class="py-44 pb-24">
       <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
         Hola, soy Sebastian
         <a
@@ -23,14 +28,16 @@ description="Portafolio personal de Sebastian Landeo, ingeniero de software espe
           <Badge>Disponible para trabajar</Badge>
         </a>
       </h1>
-      <h2 class="text-xl opacity-80 text-wrap">
+      <h2 class="text-2xl text-wrap">
         Actualmente curso el cuarto año de la carrera de Ingeniería de Software
-        en la Universidad Nacional Mayor de San Marcos (UNMSM), especializado en las
-        áreas de <span class="text-yellow-200/90">Análisis de Datos e IA</span> para la toma de decisiones.
+        en la Universidad Nacional Mayor de San Marcos (UNMSM), especializado en
+        las áreas de <span class="text-yellow-200/90"
+          >Análisis de Datos e IA</span
+        > para la toma de decisiones.
       </h2>
 
       <!-- class="w-6 h-6" = class="size-6"-->
-      <nav class="flex gap-x-2 mt-8">
+      <nav class="flex gap-x-5 mt-8">
         <SocialPill href="https://www.linkedin.com/in/sebastian-landeo-cuentas">
           <LinkedInIcon class="w-6 h-6" />
           LinkedIn
@@ -39,11 +46,19 @@ description="Portafolio personal de Sebastian Landeo, ingeniero de software espe
           <GitHubIcon class="w-6 h-6" />
           GitHub
         </SocialPill>
-        <SocialPill href="https://github.com/Sebastian-Landeo">
+        <SocialPill>
           <MailIcon class="w-6 h-6" />
           sebastian.landeo@unmsm.edu.pe
         </SocialPill>
       </nav>
-    </section>
+    </SectionContainer>
   </main>
+
+  <SectionContainer id="experiencia">
+    <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+      <Briefcase class="w-7 h-7" />
+      Experiencia Laboral
+    </h2>
+    <Experience />
+  </SectionContainer>
 </Layout>
