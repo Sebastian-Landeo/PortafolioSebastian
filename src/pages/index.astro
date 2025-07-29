@@ -15,9 +15,9 @@ import Briefcase from "../icons/Briefcase.astro";
   title="Sebastian Landeo - Portafolio - Ingeniero de Software, Análisis de Datos e IA"
   description="Portafolio personal de Sebastian Landeo, ingeniero de software especializado en análisis de datos e inteligencia artificial. Explora mis proyectos y habilidades."
 >
-  <main>
-    <SectionContainer class="py-44 pb-24">
-      <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-36">
+      <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
         Hola, soy Sebastian
         <a
           href="https://www.linkedin.com/in/sebastian-landeo-cuentas"
@@ -28,7 +28,7 @@ import Briefcase from "../icons/Briefcase.astro";
           <Badge>Disponible para trabajar</Badge>
         </a>
       </h1>
-      <h2 class="text-2xl text-wrap">
+      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
         Actualmente curso el cuarto año de la carrera de Ingeniería de Software
         en la Universidad Nacional Mayor de San Marcos (UNMSM), especializado en
         las áreas de <span class="text-yellow-200/90"
@@ -37,17 +37,17 @@ import Briefcase from "../icons/Briefcase.astro";
       </h2>
 
       <!-- class="w-6 h-6" = class="size-6"-->
-      <nav class="flex gap-x-5 mt-8">
+      <nav class="flex gap-4 mt-8 flex-wrap">
         <SocialPill href="https://www.linkedin.com/in/sebastian-landeo-cuentas">
-          <LinkedInIcon class="w-6 h-6" />
+          <LinkedInIcon class="size-4 md:size-6" />
           LinkedIn
         </SocialPill>
         <SocialPill href="https://github.com/Sebastian-Landeo">
-          <GitHubIcon class="w-6 h-6" />
+          <GitHubIcon class="size-4 md:size-6" />
           GitHub
         </SocialPill>
-        <SocialPill>
-          <MailIcon class="w-6 h-6" />
+        <SocialPill href="mailto:sebastian.landeo@unmsm.edu.pe">
+          <MailIcon class="size-4 md:size-6" />
           sebastian.landeo@unmsm.edu.pe
         </SocialPill>
       </nav>
