@@ -11,6 +11,8 @@ import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Briefcase from "../icons/Briefcase.astro";
 import Projects from "../components/Projects.astro";
+import AboutMe from "../components/AboutMe.astro";
+import ProfileCheck from "../icons/ProfileCheck.astro";
 ---
 
 <Layout
@@ -18,41 +20,54 @@ import Projects from "../components/Projects.astro";
   description="Portafolio personal de Sebastian Landeo, ingeniero de software especializado en análisis de datos e inteligencia artificial. Explora mis proyectos y habilidades."
 >
   <main class="px-4">
-    <SectionContainer class="py-16 md:py-36">
-      <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
-        Hola, soy Sebastian
-        <a
-          href="https://www.linkedin.com/in/sebastian-landeo-cuentas"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex justify-center items-center"
-        >
-          <Badge>Disponible para trabajar</Badge>
-        </a>
-      </h1>
-      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
-        Actualmente curso el cuarto año de la carrera de Ingeniería de Software
-        en la Universidad Nacional Mayor de San Marcos (UNMSM), especializado en
-        las áreas de <span class="text-yellow-200/90"
-          >Análisis de Datos e IA</span
-        > para la toma de decisiones.
-      </h2>
+    <SectionContainer class="py-16 pb-100 md:py-36">
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-20">
+        <div class="flex-1">
+          <div class="flex gap-4 mb-4">
+            <a
+              href="https://www.linkedin.com/in/sebastian-landeo-cuentas"
+              target="_blank"
+              rel="noopener"
+              class="flex items-center transition md:justify-center md:hover:scale-105"
+            >
+              <Badge>Disponible para trabajar</Badge>
+            </a>
+          </div>
+          <h1
+            class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+          >
+            Hola, soy Sebastian
+          </h1>
+          <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+            Actualmente curso el cuarto año de la carrera de Ingeniería de
+            Software en la Universidad Nacional Mayor de San Marcos (UNMSM),
+            especializado en las áreas de <span class="text-yellow-200/90"
+              >Análisis de Datos e IA</span
+            > para la toma de decisiones.
+          </h2>
 
-      <!-- class="w-6 h-6" = class="size-6"-->
-      <nav class="flex gap-4 mt-8 flex-wrap">
-        <SocialPill href="https://www.linkedin.com/in/sebastian-landeo-cuentas">
-          <LinkedInIcon class="size-4 md:size-6" />
-          LinkedIn
-        </SocialPill>
-        <SocialPill href="https://github.com/Sebastian-Landeo">
-          <GitHubIcon class="size-4 md:size-6" />
-          GitHub
-        </SocialPill>
-        <SocialPill href="mailto:sebastian.landeo@unmsm.edu.pe">
-          <MailIcon class="size-4 md:size-6" />
-          sebastian.landeo@unmsm.edu.pe
-        </SocialPill>
-      </nav>
+          <!-- class="w-6 h-6" = class="size-6"-->
+          <nav class="flex gap-4 mt-8 flex-wrap">
+            <SocialPill
+              href="https://www.linkedin.com/in/sebastian-landeo-cuentas"
+            >
+              <LinkedInIcon class="size-4 md:size-6" />
+              LinkedIn
+            </SocialPill>
+            <SocialPill href="mailto:sebastian.landeo@unmsm.edu.pe">
+              <MailIcon class="size-4 md:size-6" />
+              Contáctame
+            </SocialPill>
+          </nav>
+        </div>
+        <div class="flex-shrink-0 mt-10">
+          <img
+            class="rounded-lg w-48 h-60 md:w-56 md:h-72 lg:w-64 lg:h-80 object-cover shadow-lg"
+            src="/sebastian2.jpg"
+            alt="Sebastian Landeo - Foto de perfil"
+          />
+        </div>
+      </div>
     </SectionContainer>
   </main>
 
@@ -70,5 +85,14 @@ import Projects from "../components/Projects.astro";
       Proyectos
     </h2>
     <Projects />
+  </SectionContainer>
+
+  <SectionContainer id="sobre-mi" class="mt-7">
+    <h2
+      class="flex items-center mb-6 text-3xl font-semibold gap-x-3"
+    ><ProfileCheck class="size-7" />
+      Sobre mí
+    </h2>
+    <AboutMe />
   </SectionContainer>
 </Layout>
