@@ -13,6 +13,9 @@ import Briefcase from "../icons/Briefcase.astro";
 import Projects from "../components/Projects.astro";
 import AboutMe from "../components/AboutMe.astro";
 import ProfileCheck from "../icons/ProfileCheck.astro";
+import People from "../components/People.astro";
+import Coworker from "../icons/Coworker.astro";
+import CV from "../icons/CV.astro";
 ---
 
 <Layout
@@ -20,8 +23,8 @@ import ProfileCheck from "../icons/ProfileCheck.astro";
   description="Portafolio personal de Sebastian Landeo, ingeniero de software especializado en análisis de datos e inteligencia artificial. Explora mis proyectos y habilidades."
 >
   <main class="px-4">
-    <SectionContainer class="py-16 pb-100 md:py-36">
-      <div class="flex flex-col md:flex-row items-center md:items-start gap-20">
+    <SectionContainer class="pt-20 pb-32 md:pt-32 md:pb-44 min-h-screen flex items-center">
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-20 w-full">
         <div class="flex-1">
           <div class="flex gap-4 mb-4">
             <a
@@ -55,8 +58,12 @@ import ProfileCheck from "../icons/ProfileCheck.astro";
               LinkedIn
             </SocialPill>
             <SocialPill href="mailto:sebastian.landeo@unmsm.edu.pe">
-              <MailIcon class="size-4 md:size-6" />
+              <MailIcon class="size-4 md:size-7" />
               Contáctame
+            </SocialPill>
+            <SocialPill href="../../public/documents/CV- Sebastian Landeo - AD - Principal.pdf" download="CV-Sebastian-Landeo.pdf">
+              <CV class="size-4 md:size-7" />
+              Descargar
             </SocialPill>
           </nav>
         </div>
@@ -71,7 +78,7 @@ import ProfileCheck from "../icons/ProfileCheck.astro";
     </SectionContainer>
   </main>
 
-  <SectionContainer id="experiencia">
+  <SectionContainer id="experiencia" class="mb-20">
     <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
       <Briefcase class="w-7 h-7" />
       Experiencia Laboral
@@ -79,7 +86,7 @@ import ProfileCheck from "../icons/ProfileCheck.astro";
     <Experience />
   </SectionContainer>
 
-  <SectionContainer id="proyectos">
+  <SectionContainer id="proyectos" class="mb-20">
     <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
       <CodeIcon class="w-7 h-7" />
       Proyectos
@@ -87,7 +94,15 @@ import ProfileCheck from "../icons/ProfileCheck.astro";
     <Projects />
   </SectionContainer>
 
-  <SectionContainer id="sobre-mi" class="mt-7">
+  <SectionContainer id="people" class="mb-20">
+    <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+      <Coworker class="w-7 h-7" />
+      Colegas que me recomiendan
+    </h2>
+    <People />
+  </SectionContainer>
+
+  <SectionContainer id="sobre-mi" class="mb-20">
     <h2
       class="flex items-center mb-6 text-3xl font-semibold gap-x-3"
     ><ProfileCheck class="size-7" />
@@ -95,4 +110,5 @@ import ProfileCheck from "../icons/ProfileCheck.astro";
     </h2>
     <AboutMe />
   </SectionContainer>
+
 </Layout>
