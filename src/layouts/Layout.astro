@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import "@fontsource-variable/onest";
+import "@fontsource/press-start-2p";
 import Footer from "../components/Footer.astro";
 
 interface Props {
@@ -52,6 +53,20 @@ const { description, title } = Astro.props;
         html {
           scroll-behavior: auto;
         }
+      }
+
+      h1 {
+        font-family: "Press Start 2P", system-ui, sans-serif;
+        font-size: 1.5rem;
+      }
+
+      h2 {
+        font-family: "Press Start 2P", system-ui, sans-serif;
+        font-size: 1.35rem;
+      }
+
+      h2.font-sans {
+        font-family: "Onest Variable", system-ui, sans-serif !important;
       }
     </style>
   </body>
