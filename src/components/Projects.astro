@@ -4,7 +4,21 @@ import Next from "../icons/Next.astro";
 import Tailwind from "../icons/Tailwind.astro";
 import PowerApps from "../icons/PowerApps.astro";
 import PowerAutomate from "../icons/PowerAutomate.astro";
+import JavaScript from "../icons/JavaScript.astro";
+import WhatsApp from "../icons/WhatsApp.astro";
+import Docker from "../icons/Docker.astro";
+import MySQL from "../icons/MySQL.astro";
+import Excel from "../icons/Excel.astro";
+import SqlServer from "../icons/SqlServer.astro";
+import PowerBI from "../icons/PowerBI.astro";
+import VBA from "../icons/VBA.astro";
 import LinkButton from "./LinkButton.astro";
+import Python from "../icons/Python.astro";
+import GeminiLLM from "../icons/GeminiLLM.astro";
+import Sklearn from "../icons/Sklearn.astro";
+import Numpy from "../icons/Numpy.astro";
+import Pandas from "../icons/Pandas.astro";
+import Matplotlib from "../icons/Matplotlib.astro";
 
 const TAGS = {
   NEXT: {
@@ -27,17 +41,131 @@ const TAGS = {
     class: "bg-[#CDF5FA] text-black",
     icon: PowerAutomate,
   },
+  JAVA_SCRIPT: {
+    name: "JavaScript",
+    class: "bg-[#FFFFC2] text-black",
+    icon: JavaScript,
+  },
+  WHATS_APP: {
+    name: "WhatsApp",
+    class: "bg-green-400 text-white",
+    icon: WhatsApp,
+  },
+  DOCKER: {
+    name: "Docker",
+    class: "bg-[#D9F8FF] text-black",
+    icon: Docker,
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-[#4479A1] text-white",
+    icon: MySQL,
+  },
+  EXCEL: {
+    name: "Excel",
+    class: "bg-[#75FFCB] text-black",
+    icon: Excel,
+  },
+  SQL_SERVER: {
+    name: "SQL Server",
+    class: "bg-[#FF8080] text-white",
+    icon: SqlServer,
+  },
+  POWER_BI: {
+    name: "Power BI",
+    class: "bg-[#F2F2F2] text-black",
+    icon: PowerBI,
+  },
+  VBA: {
+    name: "Macros - VBA (Visual Basic for Applications)",
+    class: "bg-[#C9FFFF] text-black",
+    icon: VBA,
+  },
+  PYTHON: {
+    name: "Python",
+    class: "bg-[#EDFFC4] text-black",
+    icon: Python,
+  },
+  GEMINI: {
+    name: "Gemini",
+    class: "bg-[#F2F2F2] text-black",
+    icon: GeminiLLM,
+  },
+  SKLEARN: {
+    name: "SkLearn",
+    class: "bg-[#A8A8A8] text-black",
+    icon: Sklearn,
+  },
+  NUMPY: {
+    name: "NumPy",
+    class: "bg-[#983A3A] text-white",
+    icon: Numpy,
+  },
+  PANDAS: {
+    name: "Pandas",
+    class: "bg-[#CCFBFF] text-black",
+    icon: Pandas,
+  },
+  MATPLOTLIB: {
+    name: "Matplotlib",
+    class: "bg-[#F2F2F2] text-black",
+    icon: Matplotlib,
+  },
 }
 
 const PROJECTS = [
   {
     title: "Integración de Power Apps y Power Automate para el seguimiento de proveedores",
     description:
-      "Automatización de procesos internos mediante Power Apps y Power Automate, para la gestión eficiente de proveedores.",
+      "El sistema gestiona los datos de proveedores, incluyendo la gestión de documentos, el registro de proveedores y la automatización de procesos de negocio por Power Automate. Administra las relaciones con ellos a través de una interfaz moderna gracias a Power Apps.",
     github: "https://github.com/Sebastian-Landeo/GestionarProveedores-PowerPlataform/tree/main",
     image: "/projects/power-apps.webp",
     tags: [TAGS.POWER_APPS, TAGS.POWER_AUTOMATE],
   },
+  {
+    title: "Chatbot de WhatsApp para la gestión de citas médicas",
+    description:
+      "Se implemento un agente conversacional diseñado para facilitar la programación y gestión de citas médicas en el Centro Médico de San Marcos. Permitiendo a los pacientes programar, reprogramar, ver y cancelar citas médicas mediante una interfaz de lenguaje natural, lo que reduce la carga administrativa y mejora el acceso a la atención médica.",
+    github: "https://github.com/Sebastian-Landeo/Chatbot-CitasMedicas-CuritaSanMarcos",
+    image: "/projects/chatbot.webp",
+    tags: [TAGS.JAVA_SCRIPT, TAGS.WHATS_APP, TAGS.DOCKER, TAGS.MYSQL, TAGS.GEMINI],
+  },
+  {
+    title: "Análisis de Datos Integral de Ventas",
+    description: "Se construyó un panel de análisis de productos que permite monitorear los ingresos, las ganancias y las tendencias. Durante el proceso, se desglosaron las solicitudes de gestión, se creó una base de datos, se redactaron consultas SQL y se diseñó un reporte orientado a ejecutivos.",
+    github: "https://github.com/Sebastian-Landeo/ReporteVentas",
+    image: "/projects/analisis-ventas.webp",
+    tags: [TAGS.EXCEL, TAGS.SQL_SERVER, TAGS.POWER_BI],
+  },
+  {
+    title: "ETL - Tendencias en las telecomunicaciones",
+    description:
+      "Procesa y analizar datos de infraestructura de telecomunicaciones en los 26 departamentos del Perú (2011-2021). El sistema transforma los datos de Excel sin procesar en un almacén de datos estructurado utilizando un esquema de estrella. El dashboard informa sobre la penetración de telecomunicaciones, conectividad doméstica, indicadores económicos y patrones de desarrollo regional.",
+    github: "https://github.com/Sebastian-Landeo/Telecomunicaciones-Per-ETL",
+    image: "/projects/tendencias-internet.webp",
+    tags: [TAGS.EXCEL, TAGS.MYSQL, TAGS.POWER_BI],
+  },
+  {
+    title: "Facturación Electrónica de E-commerce",
+    description: "Sistema de facturación electrónica para una tienda en línea de productos tecnológicos. Automatiza la generación y envío de facturas electrónicas gracias al uso de macros (Visual Basic - VBA) en Excel",
+    github: "https://github.com/Sebastian-Landeo/FacturasExcel",
+    image: "/projects/facturacion-electronica.webp",
+    tags: [TAGS.EXCEL, TAGS.VBA],
+  },
+  {
+    title: "Interpretador de Facturas con LLM (IA)",
+    description: "Aplicación de procesamiento de facturas basada en IA que automatiza la extracción, la estructuración y el almacenamiento de datos de facturas PDF. Se utiliza el modelo LLM de Google Gemini para analizar el texto no estructurado de las facturas y almacena los datos procesados tanto en bases de datos MySQL como en archivos CSV para la generación de reportes.",
+    image: "projects/interpretador-factura.webp",
+    github: "https://github.com/Sebastian-Landeo/LectorFacturasAD",
+    tags: [TAGS.PYTHON, TAGS.GEMINI, TAGS.MYSQL, TAGS.POWER_BI],
+  },
+  {
+    title: "Modelo Predictivo de Población Mundial (IA)",
+    description:"El proceso incluyó la recopilación y limpieza de datos históricos de población, la selección de variables relevantes y la implementación de modelos de regresión para realizar proyecciones precisas. Se identifico tendencias clave en el crecimiento demográfico global y generar estimaciones útiles para la planificación a largo plazo.",
+    image: "projects/modelo-poblacion.webp",
+    github: "https://github.com/Sebastian-Landeo/Predecir-Poblaci-n-Mundial-ML",
+    tags: [TAGS.PYTHON, TAGS.SKLEARN, TAGS.NUMPY, TAGS.PANDAS, TAGS.MATPLOTLIB],
+  }
 ];
 ---
 <div class="flex flex-col gap-y-16">
