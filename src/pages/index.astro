@@ -17,6 +17,7 @@ import Coworker from "../icons/Coworker.astro";
 import CV from "../icons/CV.astro";
 import Certificate from "../components/Certificate.astro";
 import IconCertificate from "../icons/IconCertificate.astro";
+import SkillsList from "../components/SkillsList.astro";
 ---
 
 <!-- En Hola, soy Sebastian, antes estaba mb-4 -->
@@ -25,12 +26,10 @@ import IconCertificate from "../icons/IconCertificate.astro";
   description="Portafolio personal de Sebastian Landeo, ingeniero de software especializado en análisis de datos e inteligencia artificial. Explora mis proyectos y habilidades."
 >
   <main class="px-4">
-    <SectionContainer
-      class="pt-20 pb-32 md:pt-32 md:pb-44 min-h-screen flex items-center"
-    >
-      <div
-        class="flex flex-col md:flex-row items-center md:items-start gap-20 w-full"
-      >
+  <SectionContainer class="pt-20 pb-32 md:pt-32 md:pb-44 min-h-screen flex items-center justify-center">
+    <div class="flex flex-col w-full max-w-6xl mx-auto">
+      <!-- Contenido principal centrado -->
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-20 w-full">
         <div class="flex-1">
           <div class="flex gap-4 mb-7">
             <a
@@ -84,8 +83,14 @@ import IconCertificate from "../icons/IconCertificate.astro";
           />
         </div>
       </div>
-    </SectionContainer>
-  </main>
+      
+      <!-- SkillsList en un contenedor separado -->
+      <div class="w-full">
+        <SkillsList />
+      </div>
+    </div>
+  </SectionContainer>
+</main>
 
   <SectionContainer id="experiencia" class="mb-20">
     <h2

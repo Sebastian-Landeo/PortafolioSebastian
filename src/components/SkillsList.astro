@@ -1,0 +1,95 @@
+---
+import Python from "../icons/Python.astro";
+import JavaScript from "../icons/JavaScript.astro";
+import PowerApps from "../icons/PowerApps.astro";
+import PowerAutomate from "../icons/PowerAutomate.astro";
+import MySQL from "../icons/MySQL.astro";
+import Excel from "../icons/Excel.astro";
+import SqlServer from "../icons/SqlServer.astro";
+import PowerBI from "../icons/PowerBI.astro";
+import VBA from "../icons/VBA.astro";
+import GeminiLLM from "../icons/GeminiLLM.astro";
+import Sklearn from "../icons/Sklearn.astro";
+import Numpy from "../icons/Numpy.astro";
+import Pandas from "../icons/Pandas.astro";
+import Matplotlib from "../icons/Matplotlib.astro";
+import Docker from "../icons/Docker.astro";
+import GitHub from "../icons/GitHub.astro";
+
+
+const SKILLS = [
+  { name: "Python", icon: Python },
+  { name: "JavaScript", icon: JavaScript },
+  { name: "SQL Server", icon: SqlServer },
+  { name: "MySQL", icon: MySQL },
+  { name: "Power BI", icon: PowerBI },
+  { name: "Excel", icon: Excel },
+  { name: "Power Apps", icon: PowerApps },
+  { name: "Power Automate", icon: PowerAutomate },
+  { name: "Visual Basic (Macros)", icon: VBA },
+  { name: "Pandas", icon: Pandas },
+  { name: "NumPy", icon: Numpy },
+  { name: "Matplotlib", icon: Matplotlib },
+  { name: "Scikit-learn", icon: Sklearn },
+  { name: "Gemini AI", icon: GeminiLLM },
+  { name: "Docker", icon: Docker },
+  { name: "GitHub", icon: GitHub },
+];
+---
+
+<div class="w-full py-8 mt-8 opacity-70">
+  <div class="overflow-hidden">
+    <div class="skill-scroll flex gap-8 items-center">
+      {
+        SKILLS.concat(SKILLS)
+          .concat(SKILLS)
+          .map((skill) => (
+            <div class="skill-item flex items-center gap-3 px-6 py-3 transition-all duration-300">
+              <skill.icon class="size-10" />
+              <span class="text-sm md:text-base font-medium text-white whitespace-nowrap">
+                {skill.name}
+              </span>
+            </div>
+          ))
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .skill-scroll {
+    animation: scroll-infinite 60s linear infinite;
+    width: max-content;
+  }
+
+  .skill-item {
+    flex-shrink: 0;
+    min-width: fit-content;
+  }
+
+  @keyframes scroll-infinite {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Removido el hover pause para que sea infinito */
+  /* .skill-scroll:hover {
+    animation-play-state: paused;
+  } */
+
+  /* Efecto de gradiente en los bordes */
+  .skill-scroll::before,
+  .skill-scroll::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 10;
+    pointer-events: none;
+  }
+</style>
