@@ -47,11 +47,22 @@ const { description, title } = Astro.props;
         display: flex;
         flex-direction: column;
         height: 100vh;
+        text-align: justify; /* ← Texto justificado global */
       }
 
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
+      /* Justificar todos los párrafos y textos */
+      p, div, span, li {
+        text-align: justify;
+      }
+
+      /* Mantener centrados los títulos */
+      h1, h2, h3, h4, h5, h6 {
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        h1, h2, h3, h4, h5, h6 {
+          text-align: left; /* Títulos a la izquierda en desktop */
         }
       }
 
@@ -67,6 +78,12 @@ const { description, title } = Astro.props;
 
       h2.font-sans {
         font-family: "Onest Variable", system-ui, sans-serif !important;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
       }
     </style>
   </body>
