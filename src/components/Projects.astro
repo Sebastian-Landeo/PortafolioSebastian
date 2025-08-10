@@ -92,7 +92,7 @@ const TAGS = {
     icon: GeminiLLM,
   },
   SKLEARN: {
-    name: "SkLearn",
+    name: "Scikit-learn",
     class: "bg-[#A8A8A8] text-black",
     icon: Sklearn,
   },
@@ -128,7 +128,7 @@ const PROJECTS = [
       "Se implemento un agente conversacional diseñado para facilitar la programación y gestión de citas médicas en el Centro Médico de San Marcos. Permitiendo a los pacientes programar, reprogramar, ver y cancelar citas médicas mediante una interfaz de lenguaje natural, lo que reduce la carga administrativa y mejora el acceso a la atención médica.",
     github: "https://github.com/Sebastian-Landeo/Chatbot-CitasMedicas-CuritaSanMarcos",
     image: "/projects/chatbot.webp",
-    tags: [TAGS.JAVA_SCRIPT, TAGS.WHATS_APP, TAGS.MYSQL, TAGS.GEMINI],
+    tags: [TAGS.JAVA_SCRIPT, TAGS.WHATS_APP, TAGS.MYSQL, TAGS.GEMINI, TAGS.DOCKER],
   },
   {
     title: "Análisis de Datos Integral de Ventas",
@@ -168,7 +168,7 @@ const PROJECTS = [
   }
 ];
 ---
-<div class="flex flex-col gap-y-16">
+<div class="flex flex-col gap-y-16 mx-4">
   {
     PROJECTS.map(({ image, title, description, tags, github }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0 md:items-center">
@@ -183,11 +183,11 @@ const PROJECTS = [
       {title}
     </h3>
     <div class="flex flex-wrap mt-2 justify-center md:justify-start">
-      <ul class="flex flex-row mb-2 gap-x-2">
+      <ul class="flex flex-wrap justify-center md:justify-start mb-2 gap-x-2 gap-y-2 max-w-full">
           {tags.map((tag) => (
             <li>
               <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 flex-shrink-0`}
               >
                 <tag.icon class="size-4" />
                 {tag.name}
@@ -195,17 +195,17 @@ const PROJECTS = [
             </li>
           ))}
         </ul>
-
-      <div class="mt-2 text-gray-700 dark:text-gray-400 text-center md:text-left">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Código   
-            </LinkButton>
-          )}
-        </footer>
     </div>
+
+    <div class="mt-2 text-gray-700 dark:text-gray-400 text-center md:text-left">{description}</div>
+    <footer class="flex items-end justify-center md:justify-start mt-4 gap-x-4">
+        {github && (
+          <LinkButton href={github}>
+            <GitHub class="size-6" />
+            Código   
+          </LinkButton>
+        )}
+      </footer>
   </div>
 </article>
     ))
