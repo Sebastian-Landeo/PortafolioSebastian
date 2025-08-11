@@ -5,5 +5,9 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function({ addVariant }) {
+      addVariant('dark', ['&:where(.dark)', '&:where(.dark *)'])
+    }
+  ],
 }
