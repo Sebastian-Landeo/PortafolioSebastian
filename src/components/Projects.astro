@@ -19,6 +19,8 @@ import Sklearn from "../icons/Sklearn.astro";
 import Numpy from "../icons/Numpy.astro";
 import Pandas from "../icons/Pandas.astro";
 import Matplotlib from "../icons/Matplotlib.astro";
+import SSIS from "../icons/SSIS.astro";
+import SSAS from "../icons/SSAS.astro";
 
 const TAGS = {
   NEXT: {
@@ -111,6 +113,16 @@ const TAGS = {
     class: "bg-[#F2F2F2] text-black",
     icon: Matplotlib,
   },
+  SSIS:{
+    name: "SQL Server Integration Services",
+    class: "bg-[#F2F2F2] text-black",
+    icon: SSIS,
+  },
+  SSAS: {
+    name: "SQL Server Analysis Services",
+    class: "bg-[#F2F2F2] text-black",
+    icon: SSAS,
+  },
 }
 
 const PROJECTS = [
@@ -165,6 +177,13 @@ const PROJECTS = [
     image: "projects/modelo-poblacion.webp",
     github: "https://github.com/Sebastian-Landeo/Predecir-Poblaci-n-Mundial-ML",
     tags: [TAGS.PYTHON, TAGS.SKLEARN, TAGS.NUMPY, TAGS.PANDAS, TAGS.MATPLOTLIB],
+  },
+  {
+    title: "ETL - Datamarts y Diseño de Cubos",
+    description: "Implementación de un sistema ETL para la creación de datamarts y cubos de datos. Se utilizó SQL Server Integration Services (SSIS) para la extracción, transformación y carga de datos desde diversas fuentes hacia un modelo de datos en estrella.",
+    image: "projects/ssis.webp",
+    github: "https://github.com/Sebastian-Landeo/proyecto-ssis-ssas",
+    tags: [TAGS.SQL_SERVER, TAGS.EXCEL, TAGS.SSIS, TAGS.SSAS],
   }
 ];
 ---
