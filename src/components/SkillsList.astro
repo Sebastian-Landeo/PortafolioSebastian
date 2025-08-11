@@ -17,8 +17,24 @@ import Docker from "../icons/Docker.astro";
 import GitHub from "../icons/GitHub.astro";
 import R from "../icons/R.astro";
 
-
 const SKILLS = [
+  { name: "Python", icon: Python },
+  { name: "JavaScript", icon: JavaScript },
+  { name: "SQL Server", icon: SqlServer },
+  { name: "MySQL", icon: MySQL },
+  { name: "Power BI", icon: PowerBI },
+  { name: "Excel", icon: Excel },
+  { name: "Lenguaje R", icon: R },
+  { name: "Power Apps", icon: PowerApps },
+  { name: "Power Automate", icon: PowerAutomate },
+  { name: "Visual Basic (Macros)", icon: VBA },
+  { name: "Pandas", icon: Pandas },
+  { name: "NumPy", icon: Numpy },
+  { name: "Matplotlib", icon: Matplotlib },
+  { name: "Scikit-learn", icon: Sklearn },
+  { name: "Gemini AI", icon: GeminiLLM },
+  { name: "Docker", icon: Docker },
+  { name: "GitHub", icon: GitHub },
   { name: "Python", icon: Python },
   { name: "JavaScript", icon: JavaScript },
   { name: "SQL Server", icon: SqlServer },
@@ -40,28 +56,77 @@ const SKILLS = [
 ---
 
 <div class="w-full py-8 mt-8 opacity-70">
-  <div class="overflow-hidden">
-    <div class="skill-scroll flex gap-8 items-center">
+  <div class="skills-slider">
+    <div class="skill-scroll">
+      <!-- Primer conjunto de skills -->
       {
-        SKILLS.concat(SKILLS)
-          .concat(SKILLS)
-          .map((skill) => (
-            <div class="skill-item flex items-center gap-3 px-6 py-3 transition-all duration-300">
-              <skill.icon class="size-10" />
-              <span class="text-sm md:text-base font-medium text-black dark:text-white whitespace-nowrap">
-                {skill.name}
-              </span>
-            </div>
-          ))
+        SKILLS.map((skill) => (
+          <div class="skill-item flex items-center gap-3 px-6 py-3 transition-all duration-300">
+            <skill.icon class="size-10" />
+            <span class="text-sm md:text-base font-medium text-black dark:text-white whitespace-nowrap">
+              {skill.name}
+            </span>
+          </div>
+        ))
+      }
+      <!-- Segundo conjunto (duplicado para efecto infinito) -->
+      {
+        SKILLS.map((skill) => (
+          <div class="skill-item flex items-center gap-3 px-6 py-3 transition-all duration-300">
+            <skill.icon class="size-10" />
+            <span class="text-sm md:text-base font-medium text-black dark:text-white whitespace-nowrap">
+              {skill.name}
+            </span>
+          </div>
+        ))
       }
     </div>
   </div>
 </div>
 
 <style>
+  .skills-slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  /* Gradientes en los bordes */
+  .skills-slider::before,
+  .skills-slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .skills-slider::before {
+    left: 0;
+    background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
+  }
+
+  .skills-slider::after {
+    right: 0;
+    background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
+  }
+
+  /* Gradientes para modo oscuro */
+  :global(.dark) .skills-slider::before {
+    background: linear-gradient(to right, #0f172a, rgba(15, 23, 42, 0));
+  }
+
+  :global(.dark) .skills-slider::after {
+    background: linear-gradient(to left, #0f172a, rgba(15, 23, 42, 0));
+  }
+
   .skill-scroll {
-    animation: scroll-infinite 60s linear infinite;
+    display: flex;
+    animation: scroll-infinite 120s linear infinite;
     width: max-content;
+    gap: 2rem;
   }
 
   .skill-item {
@@ -71,27 +136,27 @@ const SKILLS = [
 
   @keyframes scroll-infinite {
     0% {
-      transform: translateX(0%);
+      transform: translateX(0);
     }
     100% {
       transform: translateX(-50%);
     }
   }
 
-  /* Removido el hover pause para que sea infinito */
-  /* .skill-scroll:hover {
-    animation-play-state: paused;
-  } */
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .skill-scroll {
+      animation: scroll-infinite 120s linear infinite;
+      gap: 1rem;
+    }
 
-  /* Efecto de gradiente en los bordes */
-  .skill-scroll::before,
-  .skill-scroll::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    z-index: 10;
-    pointer-events: none;
+    .skills-slider::before,
+    .skills-slider::after {
+      width: 50px;
+    }
+  }
+
+  :global(.dark) .skill-item svg[viewBox="0 0 24 24"] {
+    color: white !important;
   }
 </style>

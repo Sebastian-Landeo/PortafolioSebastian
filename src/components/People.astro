@@ -5,6 +5,7 @@ import CardPeople from "./CardPeople.astro";
 <section id="testimonio" class="testimonial-section">
   <div class="slider">
     <div class="slide-track">
+      <!-- Primer conjunto de cards -->
       <CardPeople
         link="https://www.linkedin.com/in/kevin-tupac-ag%C3%BCero/"
         image="../img/kevin.webp"
@@ -40,6 +41,8 @@ import CardPeople from "./CardPeople.astro";
         work="Full Stack Developer"
         description="Tuve el gusto de trabajar con Sebastian y puedo destacar su gran capacidad para ejecutar procesos de ETL de manera eficiente, integrando datos provenientes de diversas fuentes. Contribuyó significativamente a la automatización de tareas, eliminando procesos repetitivos y optimizando el uso del tiempo en el equipo."
       />
+      
+      <!-- Segundo conjunto (duplicado para efecto infinito) -->
       <CardPeople
         link="https://www.linkedin.com/in/kevin-tupac-ag%C3%BCero/"
         image="../img/kevin.webp"
@@ -89,14 +92,15 @@ import CardPeople from "./CardPeople.astro";
 
   /* Contenedor principal del carrusel */
   .slider {
-    position: relative; /* Permite posicionar correctamente los pseudo-elementos */
+    position: relative;
     margin: auto;
     display: flex;
     flex-direction: row;
     overflow: hidden;
     width: 100%;
-    max-width: 1000px; /* Ancho máximo para pantallas grandes */
+    max-width: 1000px;
   }
+
   /* Pseudo-elementos para aplicar gradientes en los bordes */
   .slider::before,
   .slider::after {
@@ -104,7 +108,7 @@ import CardPeople from "./CardPeople.astro";
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 50px; /* Ancho del gradiente en pantallas grandes */
+    width: 50px;
     z-index: 2;
   }
 
@@ -120,33 +124,41 @@ import CardPeople from "./CardPeople.astro";
 
   .slide-track {
     display: flex;
-    animation: scroll 40s linear infinite;
-    width: calc(250px * 14);
+    animation: scroll 30s linear infinite;
+    width: calc(250px * 10); /* 5 cards originales × 2 duplicados */
     height: auto;
   }
 
-  /* Animación para el desplazamiento */
+  /* Animación para el desplazamiento infinito */
   @keyframes scroll {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(
-        calc(-250px * 7)
-      ); /* Ajusta según la cantidad de slides visibles */
+      transform: translateX(calc(-250px * 5)); /* Mueve exactamente la mitad (5 cards) */
     }
   }
 
   /* Media Query para dispositivos móviles */
   @media (max-width: 800px) {
     .slider {
-      max-width: 100%; /* Ocupa todo el ancho de la pantalla */
+      max-width: 100%;
     }
+    
     .slide-track {
-      width: calc(60px * 14); /* Ajusta el ancho de cada slide para móviles */
-      animation: scroll 40s linear infinite;
+      width: calc(200px * 10); /* Ajusta según el tamaño de card móvil */
+      animation: scroll 25s linear infinite;
     }
-    /* Reducir el ancho del gradiente en móviles para adaptarse al tamaño */
+    
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-200px * 5));
+      }
+    }
+    
     .slider::before,
     .slider::after {
       width: 10%;
