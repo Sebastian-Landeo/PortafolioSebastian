@@ -4,7 +4,7 @@ const CERTIFICATES = [
     title: "Power Apps y Power Automate",
     company: "IDAT",
     image: "/certificates/Power Apps Y Power Automate.webp",
-    link: "https://tramiteonline.unmsm.edu.pe/sgdfd/mcc/verifica/unmsm",
+    link: "https://eva.idat.edu.pe/verificarconstanciasycertificados?codigo=CE-54283316-2025-IDAT",
     description: "Desarrollo de aplicaciones con Power Apps y automatización de procesos con Power Automate.",
   },
   {
@@ -25,7 +25,7 @@ const CERTIFICATES = [
     title: "Python Data Analytics Developer",
     company: "CIBERTEC",
     image: "/certificates/cibertec.webp",
-    link: "http://localhost:4321/certificates/cibertec.webp",
+    link: "/certificates/cibertec.webp",
     description: "Programación en Python enfocado en el análisis de datos (Manejo de datos con Pandas y visualización con Matplotlib) e integración con Power BI.",
   },
   {
@@ -97,7 +97,7 @@ const CERTIFICATES = [
   {
     CERTIFICATES.map(({ title, company, image, link, description }) => (
       <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-        <a href={link}>
+        <a href={image} target="_blank" rel="noopener noreferrer">
           <img
             class="rounded-t-lg w-full h-48 object-cover"
             src={image}
@@ -105,8 +105,8 @@ const CERTIFICATES = [
           />
         </a>
         <div class="p-5">
-          <a href={link}>
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <a href={link} target="_blank" rel="noopener noreferrer" class="certificate-title-link">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white transition-all duration-300">
               {title}
             </h5>
           </a>
@@ -121,3 +121,11 @@ const CERTIFICATES = [
     ))
   }
 </div>
+
+<style>
+  .certificate-title-link:hover h5 {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+</style>

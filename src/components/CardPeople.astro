@@ -11,7 +11,7 @@ const { image, name, work, description, link } = Astro.props;
 
 <div class="slide">
   <div class="testimonial-card">
-    <a href={link}>
+    <a href={link} target="_blank" rel="noopener noreferrer">
       <img src={image} alt="Usuario" />
     </a>
     <h3>{name}</h3>
@@ -46,6 +46,11 @@ const { image, name, work, description, link } = Astro.props;
     height: 100%;
   }
 
+  /* Modo oscuro */
+  :global(.dark) .testimonial-card {
+    background-color: #1f2937; /* bg-gray-800 */
+  }
+
   /* Imagen del usuario */
   .testimonial-card img {
     width: 80px;
@@ -60,6 +65,12 @@ const { image, name, work, description, link } = Astro.props;
     font-size: 18px;
     color: #131b4d;
   }
+
+  /* Título en modo oscuro */
+  :global(.dark) .testimonial-card h3 {
+    color: #ffffff;
+  }
+
   .texto-people {
     height: 100%;
     overflow: hidden;
@@ -71,6 +82,12 @@ const { image, name, work, description, link } = Astro.props;
     color: #131b4d;
     margin-bottom: 0 !important;
   }
+
+  /* Texto en modo oscuro */
+  :global(.dark) .testimonial-card p {
+    color: #d1d5db; /* text-gray-300 */
+  }
+
   @media (width<800px) {
     .testimonial-card {
       width: 250px;
