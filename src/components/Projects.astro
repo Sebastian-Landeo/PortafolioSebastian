@@ -21,6 +21,7 @@ import Pandas from "../icons/Pandas.astro";
 import Matplotlib from "../icons/Matplotlib.astro";
 import SSIS from "../icons/SSIS.astro";
 import SSAS from "../icons/SSAS.astro";
+import PySpark from "../icons/PySpark.astro";
 
 const TAGS = {
   NEXT: {
@@ -123,6 +124,11 @@ const TAGS = {
     class: "bg-[#F2F2F2] text-black",
     icon: SSAS,
   },
+  PYSPARK: {
+    name: "PySpark",
+    class: "bg-[#F2F2F2] text-black",
+    icon: PySpark,
+  },
 }
 
 const PROJECTS = [
@@ -184,6 +190,20 @@ const PROJECTS = [
     image: "projects/ssis.webp",
     github: "https://github.com/Sebastian-Landeo/proyecto-ssis-ssas",
     tags: [TAGS.SQL_SERVER, TAGS.EXCEL, TAGS.SSIS, TAGS.SSAS],
+  },
+  {
+    title: "Datamart de Gastos del MEF con PySpark",
+    description: "Desarrollo de un datamart utilizando PySpark para procesar y analizar grandes volúmenes de datos de gastos públicos del Ministerio de Economía y Finanzas (MEF) del Perú. El proyecto incluyó la limpieza, transformación y modelado de datos para facilitar el análisis y la generación de informes sobre el gasto público.",
+    image: "projects/pyspark_p1.webp",
+    github: "https://github.com/Sebastian-Landeo/PySpark-GastosMEF",
+    tags: [TAGS.PYTHON, TAGS.PYSPARK, TAGS.DOCKER, TAGS.POWER_BI, TAGS.SQL_SERVER],
+  },
+  {
+    title: "Modelamiento, Análisis y Predicción de Accidentes Viales",
+    description: "Desarrollo de un sistema integral para el análisis y predicción de accidentes viales utilizando PySpark. El proyecto abarcó desde la recopilación y limpieza de datos hasta la creación de modelos predictivos para identificar patrones y factores de riesgo asociados a los accidentes de tráfico.",
+    github: "https://github.com/Sebastian-Landeo/PySpark-AccidentesViales",
+    image: "projects/pyspark_p2.webp",
+    tags: [TAGS.PYTHON, TAGS.PYSPARK, TAGS.DOCKER, TAGS.POWER_BI, TAGS.MYSQL, TAGS.PANDAS, TAGS.MATPLOTLIB, TAGS.NUMPY, TAGS.SKLEARN],
   }
 ];
 ---
